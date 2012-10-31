@@ -8,24 +8,24 @@ echo -e "$VERT" "This will take some time, check some bash colors before you sta
 sleep 3
 echo "---Bg---40---41---42---43---44---45---46---47"
 sleep 1
- for i in {30..37} # foreground
- do
+for i in {30..37} # foreground
+do
 sleep 1 
- echo -n -e fg$i- 
- for j in {40..47} # background
- do
+echo -n -e fg$i- 
+for j in {40..47} # background
+do
 sleep 1 
- echo -n -e '\E['$i';'$j'm SS64'
- tput sgr0 # Reset text attributes to normal without clear
- done
- echo # newline
- done
- echo -- Clear BG --
- for n in {30..37} # foreground
- do
- sleep 1
- echo -e fg$n '\E['$n';'01'm SS64'
- tput sgr0 # Reset text attributes to normal without clear
+echo -n -e '\E['$i';'$j'm SS64'
+tput sgr0 # Reset text attributes to normal without clear
+done
+echo # newline
+done
+echo -- Clear BG --
+for n in {30..37} # foreground
+do
+sleep 1
+echo -e fg$n '\E['$n';'01'm SS64'
+tput sgr0 # Reset text attributes to normal without clear
 done
 sleep 5
 wget https://github.com/downloads/brav0hax/easy-creds/easy-creds-v3.7.tar.gz
