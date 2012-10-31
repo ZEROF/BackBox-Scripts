@@ -15,10 +15,15 @@ always being updated to the latest stable version of the most used and best know
 Easy-Creds 3.7 Install Script 0.1
 ==================================
 
-    This script (inst-0.1.sh) will :
+This script (inst-0.1.sh) will make:
 
-1. Script add easy-creds to main menu
+1. Script add easy-creds to main BackBox menu
 2. Script add nice start icon for easy-creds
 3. Script will remove install script from /opt/easy-creds directory
-4. Script will make symbolic link to run easy-creds from terminal : sudo easy
+4. Script will make symbolic link to run easy-creds from terminal with sudo easy
+
+To do :
+
+1. Add remove function for other files after download.
+2. Check all directories, then remove.
 
