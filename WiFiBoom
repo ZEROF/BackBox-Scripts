@@ -4,8 +4,8 @@
 #  wifiboom.sh
 #  
 #  Copyright 2013 written by: TH3CR4CK3R        TOP-HAT-SEC.COM
-#  Script updated to version 0.1 by: ZEROF      zerof@backbox.org
-#  Date of last edit: 27/06/2013
+#  Script updated to version 0.1b by: ZEROF      zerof@backbox.org
+#  Date of last edit: 29/06/2013
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
@@ -22,16 +22,20 @@
 #  MA 02110-1301, USA.
 #  
 #  
-echo “Checking macchanger installation …”
-sleep 3
-if ! dpkg -s macchanger | grep installed
-then
-echo “No MAC POWER. Setting up macchanger…”
-sudo apt-get install macchanger
-else
-sudo apt-get install toilet
-  fi
-sleep 5  
+ package=$(dpkg -s macchanger|grep installed)
+ echo Machanger $package
+ if [ "" = "$package" ]; then
+      echo "No MAC. Setting up macchanger"
+      sudo apt-get --force-yes --yes install macchanger
+  sleep 1    
+ fi
+  package1=$(dpkg -s toilet|grep installed)
+ echo Toilet $package1
+ if [ "" = "$package1" ]; then
+      echo "No toilet. Setting up toilet"
+      sudo apt-get --force-yes --yes install toilet
+ fi
+sleep 1   
 clear
 GREEN='\033[01;32m'
 WHITE='\033[01;37m'
