@@ -287,4 +287,5 @@ clear
   airodump-ng mon0
   exit
 fi
+
 fi
