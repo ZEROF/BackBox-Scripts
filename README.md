@@ -1,6 +1,6 @@
 BackBox-Scripts
 ===============
-Hi all BackBoxers,
+Hi dear BackBoxers,
 
 I will post all scripts made by me or our friends for our community. If i made some packages they will be in this repository too.
 
