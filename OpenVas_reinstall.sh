@@ -43,7 +43,7 @@ until [ "$selection" = "0" ]; do
     04 ) apt-get update;apt-get dist-upgrade ;;
     05 ) apt-get install greenbone-security-assistant openvas-cli openvas-manager openvas-scanner openvas-administrator sqlite3 xsltproc rsync htmldoc alien rpm nsis fakeroot ;;
     
-	1 ) service openvas-scanner stop && service openvas-manager stop && service openvas-administrator stop && service greenbone-security-assistant stop  ;;
+    1 ) service openvas-scanner stop && service openvas-manager stop && service openvas-administrator stop && service greenbone-security-assistant stop  ;;
     2 ) test -e /var/lib/openvas/CA/cacert.pem  || openvas-mkcert -q ;;
     3 ) openvas-nvt-sync --wget  ;;
     4 ) test -e /var/lib/openvas/users/om || openvas-mkcert-client -n om -i ;;
