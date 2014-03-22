@@ -6,6 +6,7 @@
 
 selection=
 until [ "$selection" = "0" ]; do
+    echo ""
     echo -e "\e[40;38;5;82m OpenVas \e[30;48;5;82m REINSTALL \e[0m"
     echo ""
     echo "01 - stop OpenVas"
