@@ -10,7 +10,7 @@ until [ "$selection" = "0" ]; do
     echo ""
     echo "PROGRAM MENU (go from 1 to 4)"
     echo "1 - enable remote desktop"
-    echo "2 - enable remote prompt"
+    echo "2 - disable remote prompt"
     echo "3 - export display settings"
     echo "4 - start vino-server"
     echo ""
