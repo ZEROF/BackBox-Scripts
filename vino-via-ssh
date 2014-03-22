@@ -22,7 +22,7 @@ until [ "$selection" = "0" ]; do
     case $selection in
     
 	1 ) gconftool-2 -s -t bool /desktop/gnome/remote_access/enabled true ;;
-  2 ) gconftool-2 --type bool --set /desktop/gnome/remote_access/prompt_enabled 0 ;;
+  	2 ) gconftool-2 --type bool --set /desktop/gnome/remote_access/prompt_enabled 0 ;;
 	3 ) export DISPLAY=:0.0 ;;
 	4 ) /usr/lib/vino/vino-server ;;
 	0 ) exit ;;
