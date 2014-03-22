@@ -2,6 +2,7 @@
 # To install vino apt-get install vino.
 # Set remote desktop connection running vino-preferences in terminal.
 # Run this script in SSH session.
+# This script was made by ZEROF <zerof@backbox.org>
 
 #!/bin/bash
 
