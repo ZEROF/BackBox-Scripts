@@ -1,7 +1,7 @@
 # This is small script to enable vino-server when you are connect via SSH to BackBox.
 # To install vino apt-get install vino.
 # Set remote desktop connection running vino-preferences in terminal.
-# Run this script via SSH.
+# Run this script in SSH session.
 
 #!/bin/bash
 
