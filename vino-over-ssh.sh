@@ -9,6 +9,8 @@
 selection=
 until [ "$selection" = "0" ]; do
     echo ""
+    echo -e "\e[40;38;5;82m VINO \e[30;48;5;82m SETTINGS \e[0m"
+    echo ""
     echo "PROGRAM MENU (go from 1 to 4)"
     echo "1 - enable remote desktop"
     echo "2 - disable remote prompt"
