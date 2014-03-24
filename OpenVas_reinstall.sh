@@ -1,8 +1,15 @@
 # This script will help you to reinstall and set OpenVas. Run as root !!!
 # Tested only with BackBox Linux
 # This script was made by ZEROF <zerof@backbox.org>
+# This script is distributed under a DO WHAT THE F*** YOU WANT TO PUBLIC LICENSE.
+# http://rmlh.me/license.html
 
 #!/bin/bash
+
+if [ $USER != 'root' ]; then
+	echo "Are you root? NO. Then try again."
+	exit
+fi
 
 selection=
 until [ "$selection" = "0" ]; do
