@@ -5,7 +5,7 @@
 # http://rmlh.me/license.html
 
 #!/bin/bash
-
+clear
 if [ $USER != 'root' ]; then
 	echo "Are you root? NO. Then try again."
 	exit
@@ -44,10 +44,10 @@ until [ "$selection" = "0" ]; do
     echo ""
     case $selection in
     
-    01 ) openvas-service stop ;;
-    02 ) apt-get purge greenbone-security-assistant openvas-cli openvas-manager openvas-scanner openvas-administrator ;;
-    03 ) apt-get autoremove --purge; rm -rf /var/lib/openvas/; rm -rf /usr/share/openvas/; rm -rf /var/cache/openvas/; rm -rf /var/log/openvas/ ;;
-    04 ) apt-get update;apt-get dist-upgrade ;;
+    01 ) openvas-service stop;clear ;;
+    02 ) apt-get purge greenbone-security-assistant openvas-cli openvas-manager openvas-scanner openvas-administrator;clear ;;
+    03 ) apt-get autoremove --purge; rm -rf /var/lib/openvas/; rm -rf /usr/share/openvas/; rm -rf /var/cache/openvas/; rm -rf /var/log/openvas/;clear ;;
+    04 ) apt-get update;apt-get dist-upgrade;clear ;;
     05 ) apt-get install greenbone-security-assistant openvas-cli openvas-manager openvas-scanner openvas-administrator sqlite3 xsltproc rsync htmldoc alien rpm nsis fakeroot ;;
     
     1 ) service openvas-scanner stop && service openvas-manager stop && service openvas-administrator stop && service greenbone-security-assistant stop  ;;
