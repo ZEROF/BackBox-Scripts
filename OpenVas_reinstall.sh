@@ -11,6 +11,13 @@ if [ $USER != 'root' ]; then
 	exit
 fi
 
+function enter ()
+ {
+  echo ""
+  read -sn 1 -p "Press any key to continue..."
+  clear
+}
+
 selection=
 until [ "$selection" = "0" ]; do
     echo ""
@@ -44,24 +51,24 @@ until [ "$selection" = "0" ]; do
     echo ""
     case $selection in
     
-    01 ) openvas-service stop;clear ;;
-    02 ) apt-get purge greenbone-security-assistant openvas-cli openvas-manager openvas-scanner openvas-administrator;clear ;;
-    03 ) apt-get autoremove --purge; rm -rf /var/lib/openvas/; rm -rf /usr/share/openvas/; rm -rf /var/cache/openvas/; rm -rf /var/log/openvas/;clear ;;
+    01 ) openvas-service stop ;;
+    02 ) apt-get purge greenbone-security-assistant openvas-cli openvas-manager openvas-scanner openvas-administrator;enter ;;
+    03 ) apt-get autoremove --purge; rm -rf /var/lib/openvas/; rm -rf /usr/share/openvas/; rm -rf /var/cache/openvas/; rm -rf /var/log/openvas/;enter ;;
     04 ) apt-get update;apt-get dist-upgrade;clear ;;
-    05 ) apt-get install greenbone-security-assistant openvas-cli openvas-manager openvas-scanner openvas-administrator sqlite3 xsltproc rsync htmldoc alien rpm nsis fakeroot ;;
+    05 ) apt-get install greenbone-security-assistant openvas-cli openvas-manager openvas-scanner openvas-administrator sqlite3 xsltproc rsync htmldoc alien rpm nsis fakeroot;enter ;;
     
-    1 ) service openvas-scanner stop && service openvas-manager stop && service openvas-administrator stop && service greenbone-security-assistant stop  ;;
-    2 ) test -e /var/lib/openvas/CA/cacert.pem  || openvas-mkcert -q ;;
-    3 ) openvas-nvt-sync --wget  ;;
-    4 ) test -e /var/lib/openvas/users/om || openvas-mkcert-client -n om -i ;;
-    5 ) openvassd ;;
-    6 ) openvasmd --migrate ;;
-    7 ) openvasmd --rebuild ;;
-    8 ) openvas-scapdata-sync ;;
-    9 ) openvas-certdata-sync ;;
-    10 ) test -e /var/lib/openvas/users/admin || openvasad -c add_user -n admin -r Admin ;;
-    11 ) killall openvassd ;;
-    12 ) service openvas-scanner start; service openvas-manager start; service openvas-administrator restart; service greenbone-security-assistant restart ;;
+    1 ) service openvas-scanner stop && service openvas-manager stop && service openvas-administrator stop && service greenbone-security-assistant stop;enter  ;;
+    2 ) test -e /var/lib/openvas/CA/cacert.pem  || openvas-mkcert -q;enter ;;
+    3 ) openvas-nvt-sync --wget;enter  ;;
+    4 ) test -e /var/lib/openvas/users/om || openvas-mkcert-client -n om -i;enter ;;
+    5 ) openvassd;enter ;;
+    6 ) openvasmd --migrate;enter ;;
+    7 ) openvasmd --rebuild;enter ;;
+    8 ) openvas-scapdata-sync;enter ;;
+    9 ) openvas-certdata-sync;enter ;;
+    10 ) test -e /var/lib/openvas/users/admin || openvasad -c add_user -n admin -r Admin;enter ;;
+    11 ) killall openvassd;enter ;;
+    12 ) service openvas-scanner start; service openvas-manager start; service openvas-administrator restart; service greenbone-security-assistant restart;enter ;;
 	0 ) exit ;;
         * ) echo "Please enter 01, 02, 03, 04, 05, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 or 0"
     esac
