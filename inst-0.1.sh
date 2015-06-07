@@ -1,5 +1,6 @@
 #!/bin/bash
 #This script was made by ZEROF <zerof@backbox.org>
+#Last update 07/06/2015
 #Easy-Creds 3.7 faster install script.
 VERT="\\033[1;32m"
 NORMAL="\\033[0;39m"
@@ -28,13 +29,28 @@ echo -e fg$n '\E['$n';'01'm SS64'
 tput sgr0 # Reset text attributes to normal without clear
 done
 sleep 5
-wget https://github.com/downloads/brav0hax/easy-creds/easy-creds-v3.7.tar.gz
+wget https://easy-creds.googlecode.com/files/easy-creds-3.8-DEV.tar.gz
 sleep 2
 echo -e "$VERT" "Here we go ....\n" "$NORMAL"
-tar -zxvf easy-creds-v3.7.tar.gz
+tar -zxvf easy-creds-3.8-DEV.tar.gz
+rm easy-creds-3.8-DEV.tar.gz
 sleep 2
 cd easy-creds/
 sleep 2
+#Install mdk3
+wget http://linux.gungoos.com/mdk3-v6.tar.gz
+tar xvzf mdk3-v6.tar.gz
+cd mdk3-v6
+#Get patch for mdk3
+sudo apt-get install patch
+wget http://linux.gungoos.com/mdk3-v6.patch
+patch Makefile < mdk3-v6.patch
+rm mdk3-v6.patch
+#Make and install mdk3
+sudo make
+sleep 2
+sudo make install
+#Install easy-creds
 sudo chmod 755 installer.sh
 sleep 2
 if [ $UID -ne 0 ]
