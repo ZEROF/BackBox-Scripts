@@ -40,6 +40,7 @@ sleep 2
 #Install mdk3
 wget http://linux.gungoos.com/mdk3-v6.tar.gz
 tar xvzf mdk3-v6.tar.gz
+rm xvzf mdk3-v6.tar.gz
 cd mdk3-v6
 #Get patch for mdk3
 sudo apt-get install patch
@@ -51,6 +52,7 @@ sudo make
 sleep 2
 sudo make install
 #Install easy-creds
+cd ..
 sudo chmod 755 installer.sh
 sleep 2
 if [ $UID -ne 0 ]
